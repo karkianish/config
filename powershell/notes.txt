@@ -1,0 +1,117 @@
+uninstall junks that came along:
+
+make powershell pretty:
+`get-help` will update (`update-help`) the help docs as well. need to run as admin though.
+
+`get-alias` to see all the aliases
+
+`get-process` or `ps` to see all the running process
+
+to get example for a command
+`help get-service -examples`
+
+in powershell, everything is object. to view all the members of an object, use `get-member` cmd
+
+// get count of result object
+// take top 5, bottom 5 
+// order by multiple props
+// group by certain props
+// distinct
+
+// enable installing packages
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+// install scoop
+iwr -useb get.scoop.sh | iex
+
+scoop install touch
+scoop install cmder
+scoop install vim
+choco install git // silent mode?
+
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
+Set-Theme Agnoster
+
+choco install vscode -y
+
+install-module zlocation
+import-module zlocation
+
+// add shortcut to edit vimrc
+https://juliankay.com/development/setting-up-vim-to-work-with-powershell/
+// how to reload powershell profile?
+// to see installed modules get-installedmodule, to uninstall
+uninstall-module
+
+
+//how to unpin from or pin to quick access?
+
+// git clone requires to answer a prompt
+// set up ssh
+
+// how to remove folders contacts, 3d objects, saved games, videos, searches, onedrive, favorites, pictures etc from user directory?
+
+// powershell scripts for
+create dir and move files 'cmv'
+creat dir and copy files 'ccp'
+cd and dir 'cddir'
+ren alias to rename
+install - install module (like in npm)
+uninst - to uninstall
+import and remove for corresponding actions
+
+to evaluate an expression or variable, wrap them inside paren with $ prefix
+`$($myVariable)AndSomeSuffix` #note without $(), the var cant be evaluated
+
+reload profile - &($profile) or .$profile
+script to run powershell, vscode, visual studio always as an admin
+
+//to reload powershell profile .$profile
+
+to break powershell command into multiple lines, use backtick (`) at the end of line. backtick should be the last character, should 
+not have any trailing space
+
+eg. invoke-webrequest `
+-uri "some addresss" `
+-useragent "some useragent" `
+-body "some body"
+
+
+to open file explorer in current path `ii .` (invoke-item)
+how to get command from an alias and other way around, set-aliases
+use $MyInvocation to get info of executing function. can i get params info? 
+to get passed in param info from $PSBoundParameter which is a dictionary of passed in params
+
+how to see function Definition
+
+send folder to recycle bin upon delete?
+
+git config --global user.email "karkianish@hotmail.com"
+git config --global user.name "Anish Karki"
+
+to start ssh-agent:
+    Get-Service ssh-agent | Set-Service -StartupType Manual
+    ssh-agent
+
+to add private key to ssh-agent
+    ssh-add '.\path\to\id_rsa'
+
+to view the list of added keys
+    ssh-add -L
+
+to delete 
+    ssh-add -D .\path\to\id_rsa
+
+to install vscode extension:
+code --install-extension Shan.code-settings-sync
+
+
+I am admin but keep getting you do not have sufficient permission error.
+use -Force flag when deleting
+
+to view whether a file is a symlink or not, pipe ls to show LinkType and Target props. Also, the last char of 'Mode' prop
+indicates whether the file is a link or not. eg. '-a---l'
+Get-ChildItem Select-Object Name, Length, LastWriteTime, Mode, LinkType, Target | Format-Table -AutoSize
+
+to display output as a table, use `Format-Table`.. but how to format so each column's value is right justify?
