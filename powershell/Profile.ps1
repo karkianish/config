@@ -7,6 +7,8 @@ $GitPromptSettings.DefaultPromptPrefix = "$(get-date -Format HH:mm:ss.fff) "
 # set prompt color
 $GitPromptSettings.DefaultForegroundColor = 'yellow'
 
+. .\powershell\MyUtils.ps1
+
 import-module posh-git
 import-module zlocation
 

@@ -159,6 +159,10 @@ function lsd {
     Get-ChildItem | Sort-Object LastWriteTime, Name -Descending
 }
 
+function rmrf($itemToRemove) {
+    Remove-Item $itemToRemove -Recurse -Force
+}
+
 function InstallAndImport($moduleName) {
     if (!(Get-Module -Name $moduleName)){
         Write-Output "Installing module $moduleName"
