@@ -125,6 +125,10 @@ function cmv($src, $dest) {
 
 # create symlink
 function ln($source, $target) {
+    if (Test-Path $target) {
+        Write-Output "$target exists. Deleting..."
+        Remove-Item $target -Recurse -Force
+    }
     New-Item -Path $target -ItemType SymbolicLink -Value $source;
     #   eg. symlink \app-settings\personal-settings\conemu.xml $conemuSettings
 }
