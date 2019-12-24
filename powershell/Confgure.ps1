@@ -64,14 +64,10 @@ Remove-Item $env:userprofile\Searches -recurse -force
 Remove-Item $env:userprofile\Videos -recurse -force
 Remove-Item $env:userprofile\MicrosoftEdgeBackups -recurse -force
 
-# # install scoop
+# install scoop. if scoop is already installed, this script will give error, which is okay.
 iwr -useb get.scoop.sh | iex
 # add the 'extras' bucket for scoop
 scoop bucket add extras
-
-scoop install git
-
-
 
 # install apps from scoop
 scoop install touch
@@ -80,13 +76,14 @@ scoop install vim
 scoop install git
 scoop install everything
 scoop install vscode
+scoop install git
 # download everything cli
 _Download -url "https://www.voidtools.com/ES-1.1.0.15.zip" -fileNameWithExt "es-cli.zip"
 # unzip file to c:\es-cli. thats the folder `find` function will look to execute es-cli.exe
 Expand-Archive "$env:userprofile\Downloads\es-cli.zip" "$env:userprofile\es-cli"
 
-
 # install settings sync for vscode
+
 # create symlink
 ln .\powershell\Profile.ps1 $profile
 ln .\vimrc ..\_vimrc

@@ -145,7 +145,7 @@ function tail($filePath, $lines = 10) {
 
 # use 'everything' cli to find requested term
 function find ($searchString) {
-    c:\users\karki\es-cli\es.exe $searchString
+    &(Join-Path $env:USERPROFILE '\es-cli\es.exe') $searchString
 }
 
 # list items sorted by name
