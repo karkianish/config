@@ -158,9 +158,17 @@ function lss {
     Get-ChildItem | Sort-Object Length, Name -Descending
 }
 
-# list items sorted by LastWriteTime (date) in descending order. Cuz we generally care for the latest one
-function lsd {
+# list items sorted by LastWriteTime (time) in descending order. Cuz we generally care for the latest one
+function lst {
     Get-ChildItem | Sort-Object LastWriteTime, Name -Descending
+}
+
+function lsf {
+    Get-ChildItem -File | Sort-Object Name
+}
+
+function lsd {
+    Get-ChildIte -Directory | Sort-Object Name
 }
 
 function rmrf($itemToRemove) {
