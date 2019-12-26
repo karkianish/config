@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-12-26 14:57:07" build="191012">
+		<key name=".Vanilla" modified="2019-12-26 16:32:39" build="191012">
 			<value name="Language" type="string" data="en"/>
-			<value name="StartType" type="hex" data="02"/>
+			<value name="StartType" type="hex" data="03"/>
 			<value name="CmdLine" type="string" data="c:\windows\system32\windowspowershell\v1.0\powershell.exe"/>
 			<value name="StartTasksFile" type="string" data="@gitbash"/>
 			<value name="StartTasksName" type="string" data="{Powershell::PowerShell as Admin}"/>
@@ -12,8 +12,8 @@
 			<value name="StartCreateDelay" type="ulong" data="100"/>
 			<value name="ColorTable00" type="dword" data="00362b00"/>
 			<value name="ColorTable01" type="dword" data="00d28b26"/>
-			<value name="ColorTable02" type="dword" data="00756e58"/>
-			<value name="ColorTable03" type="dword" data="00756e58"/>
+			<value name="ColorTable02" type="dword" data="00009985"/>
+			<value name="ColorTable03" type="dword" data="00e3f6fd"/>
 			<value name="ColorTable04" type="dword" data="00164bcb"/>
 			<value name="ColorTable05" type="dword" data="00c4716c"/>
 			<value name="ColorTable06" type="dword" data="000089b5"/>
@@ -135,11 +135,11 @@
 			<value name="Cascaded" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
 			<value name="WindowMode" type="dword" data="00000520"/>
-			<value name="ConWnd X" type="long" data="0"/>
-			<value name="ConWnd Y" type="long" data="0"/>
+			<value name="ConWnd X" type="long" data="-1"/>
+			<value name="ConWnd Y" type="long" data="-7"/>
 			<value name="LastMonitor" type="string" data="0,0,1920,1040"/>
-			<value name="ConWnd Width" type="dword" data="00000110"/>
-			<value name="ConWnd Height" type="dword" data="0000003e"/>
+			<value name="ConWnd Width" type="dword" data="00000059"/>
+			<value name="ConWnd Height" type="dword" data="0000001a"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="QuakeStyle" type="hex" data="01"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
@@ -149,7 +149,7 @@
 			<value name="HideChildCaption" type="hex" data="01"/>
 			<value name="FocusInChildWindows" type="hex" data="01"/>
 			<value name="HideCaptionAlways" type="hex" data="00"/>
-			<value name="HideCaptionAlwaysFrame" type="hex" data="00"/>
+			<value name="HideCaptionAlwaysFrame" type="hex" data="FF"/>
 			<value name="HideCaptionAlwaysDelay" type="ulong" data="2000"/>
 			<value name="HideCaptionAlwaysDisappear" type="ulong" data="2000"/>
 			<value name="DownShowHiddenMessage" type="hex" data="01"/>
@@ -334,7 +334,7 @@
 			<value name="AlwaysOnTop" type="hex" data="00"/>
 			<value name="SleepInBackground" type="hex" data="01"/>
 			<value name="RetardInactivePanes" type="hex" data="00"/>
-			<value name="MinimizeOnLoseFocus" type="hex" data="00"/>
+			<value name="MinimizeOnLoseFocus" type="hex" data="01"/>
 			<value name="DisableFarFlashing" type="hex" data="00"/>
 			<value name="DisableAllFlashing" type="hex" data="01"/>
 			<value name="FindText" type="string" data="objectnot"/>
@@ -386,11 +386,11 @@
 			<value name="Update.DownloadPath" type="string" data="%TEMP%\ConEmu"/>
 			<value name="Update.LeavePackages" type="hex" data="00"/>
 			<value name="Update.PostUpdateCmd" type="string" data="echo Last successful update&gt;ConEmuUpdate.info &amp;&amp; date /t&gt;&gt;ConEmuUpdate.info &amp;&amp; time /t&gt;&gt;ConEmuUpdate.info"/>
-			<key name="HotKeys" modified="2019-08-02 13:44:27" build="180626">
+			<key name="HotKeys" modified="2019-12-26 16:33:38" build="191012">
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="00000011"/>
 				<value name="Multi.ArrowsModifier" type="dword" data="0000005b"/>
-				<value name="MinimizeRestore" type="dword" data="00000000"/>
+				<value name="MinimizeRestore" type="dword" data="00005bc0"/>
 				<value name="MinimizeRestore2" type="dword" data="00000000"/>
 				<value name="GlobalRestore" type="dword" data="00000000"/>
 				<value name="CdExplorerPath" type="dword" data="00000000"/>
@@ -655,6 +655,12 @@
 					<value name="Active" type="long" data="0"/>
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data='cmd /c "%ConEmuDir%\..\git-for-windows\bin\bash" --login -i -new_console:d:%USERPROFILE%'/>
+				</key>
+				<key name="&lt;Startup&gt;" modified="2019-12-26 16:30:38" build="191012">
+					<value name="GuiArgs" type="string" data=""/>
+					<value name="Active" type="long" data="1"/>
+					<value name="Count" type="long" data="1"/>
+					<value name="Cmd1" type="string" data='&gt;* -cur_console:d:C:\Users\karki\config -cur_console:C:C:\Users\karki\scoop\apps\cmder\current\icons\cmder.ico PowerShell -ExecutionPolicy Bypass -NoLogo -NoExit -Command "Invoke-Expression &apos;. &apos;&apos;%ConEmuDir%\..\profile.ps1&apos;&apos;&apos;"'/>
 				</key>
 			</key>
 			<key name="Apps" modified="2019-08-02 13:44:27" build="180626">
