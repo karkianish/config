@@ -163,10 +163,12 @@ function lst {
     Get-ChildItem | Sort-Object LastWriteTime, Name -Descending
 }
 
+# list only files (exclude directories)
 function lsf {
     Get-ChildItem -File | Sort-Object Name
 }
 
+# list only directories (exclude files)
 function lsd {
     Get-ChildIte -Directory | Sort-Object Name
 }
@@ -175,16 +177,18 @@ function rmrf($itemToRemove) {
     Remove-Item $itemToRemove -Recurse -Force
 }
 
+function startSshAgent {
+    if (!(get-process |Where-Object {$_.Name -eq 'ssh-agent'})) {
+        Write-Host "Starting ssh-agent..."
+        Start-SshAgent
+    }
+}
+
 function InstallAndImport($moduleName) {
-    if (!(Get-Module -Name $moduleName)){
+    if (!(Get-InstalledModule -Name $moduleName -ErrorAction SilentlyContinue)){
         Write-Output "Installing module $moduleName"
         Install-Module $moduleName -Scope CurrentUser
     }
 
-    if (Get-Module -Name $moduleName) {
-        Write-Output "Importing module $moduleName"
-        Import-Module $moduleName
-    } else {
-        Write-Host "$moduleName doesn't exists." -ForegroundColor Red
-    }
+    Import-Module $moduleName
 }

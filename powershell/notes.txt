@@ -115,3 +115,15 @@ indicates whether the file is a link or not. eg. '-a---l'
 Get-ChildItem Select-Object Name, Length, LastWriteTime, Mode, LinkType, Target | Format-Table -AutoSize
 
 to display output as a table, use `Format-Table`.. but how to format so each column's value is right justify?
+
+how to install module without a prompt. msg like below...
+Untrusted repository
+You are installing the modules from an untrusted repository. If you trust this repository, change its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from 'PSGallery'?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+I tried using -confirm:$false but that didn't work. Then after reading the prompt, I realised 
+`psgallery` is set as untrusted repository. I updated that to trusted with `set-PSRepository psgallery -InstallationPolicy Trusted`
+No more prompts!
+
+
+why are there two 'WindowPowershell\Modules' folder - one insider `$env:userprofile` and one inside `program files`?
+the `modules` folder inside of program files is for globally installed modules where as the one in userprofile is for `-scope CurrentUser`
