@@ -33,7 +33,7 @@ Write-Host "$(U 0xE0B0) $(U 0x00B1) $(U 0xE0A0) $(U 0x27A6) $(U 0x2718) $(U 0x26
 
 `
 cd fonts
-.\install.ps1 "Meslo LG M for Powerline"
+.\install.ps1 "Meslo*"
 `
 
 # Install `oh-my-posh`

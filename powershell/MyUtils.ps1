@@ -144,40 +144,40 @@ function tail($filePath, $lines = 10) {
 }
 
 # use 'everything' cli to find requested term
-function find ($searchString) {
+function find($searchString) {
     &(Join-Path $env:USERPROFILE '\es-cli\es.exe') $searchString
 }
 
 # list items sorted by name
 function ls {
-    Get-ChildItem | Sort-Object Name
+    Get-ChildItem -Force | Sort-Object Name
 }
 
 # list items sorted by Length in descending order. Cuz we generally care for the biggest one
-function lss {
-    Get-ChildItem | Sort-Object Length, Name -Descending
+function lss{
+    Get-ChildItem -Force | Sort-Object Length, Name -Descending
 }
 
 # list items sorted by LastWriteTime (time) in descending order. Cuz we generally care for the latest one
-function lst {
-    Get-ChildItem | Sort-Object LastWriteTime, Name -Descending
+function lst{
+    Get-ChildItem -Force | Sort-Object LastWriteTime, Name -Descending
 }
 
 # list only files (exclude directories)
 function lsf {
-    Get-ChildItem -File | Sort-Object Name
+    Get-ChildItem -File -Force | Sort-Object Name
 }
 
 # list only directories (exclude files)
 function lsd {
-    Get-ChildIte -Directory | Sort-Object Name
+    Get-ChildIte -Directory -Force | Sort-Object Name
 }
 
 function rmrf($itemToRemove) {
     Remove-Item $itemToRemove -Recurse -Force
 }
 
-function startSshAgent {
+function StartSshAgent {
     if (!(get-process |Where-Object {$_.Name -eq 'ssh-agent'})) {
         Write-Host "Starting ssh-agent..."
         Start-SshAgent
@@ -191,4 +191,25 @@ function InstallAndImport($moduleName) {
     }
 
     Import-Module $moduleName
+}
+
+function InstallEsCli {
+
+    #check if es-cli\es.exe already exists
+
+    _Download -url "https://www.voidtools.com/ES-1.1.0.15.zip" -fileNameWithExt "es-cli.zip"
+
+    # unzip file to c:\es-cli. thats the folder `find` function will look to execute es-cli.exe
+    Expand-Archive "$env:userprofile\Downloads\es-cli.zip" "$env:userprofile\es-cli"
+}
+
+function InstallFontsForTheme {
+
+    #check if the repo has already been downloaded
+
+    # Install fonts
+    git clone https://github.com/powerline/fonts.git $env:USERPROFILE\fonts
+
+    cd fonts
+    .\install.ps1 "Meslo*"
 }

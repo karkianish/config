@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-12-26 14:57:07" build="191012">
+		<key name=".Vanilla" modified="2019-12-27 18:36:03" build="191012">
 			<value name="Language" type="string" data="en"/>
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data="c:\windows\system32\windowspowershell\v1.0\powershell.exe"/>
@@ -136,10 +136,10 @@
 			<value name="IntegralSize" type="hex" data="00"/>
 			<value name="WindowMode" type="dword" data="00000520"/>
 			<value name="ConWnd X" type="long" data="0"/>
-			<value name="ConWnd Y" type="long" data="0"/>
-			<value name="LastMonitor" type="string" data="0,0,1920,1040"/>
-			<value name="ConWnd Width" type="dword" data="00000110"/>
-			<value name="ConWnd Height" type="dword" data="0000003e"/>
+			<value name="ConWnd Y" type="long" data="1042"/>
+			<value name="LastMonitor" type="string" data="0,0,3840,2084"/>
+			<value name="ConWnd Width" type="dword" data="00000064"/>
+			<value name="ConWnd Height" type="dword" data="00000016"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="QuakeStyle" type="hex" data="01"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
