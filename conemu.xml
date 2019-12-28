@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-12-27 22:42:17" build="191012">
+		<key name=".Vanilla" modified="2019-12-27 23:22:55" build="191012">
 			<value name="Language" type="string" data="en"/>
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data="c:\windows\system32\windowspowershell\v1.0\powershell.exe"/>
@@ -12,10 +12,10 @@
 			<value name="StartCreateDelay" type="ulong" data="100"/>
 			<value name="ColorTable00" type="dword" data="00362b00"/>
 			<value name="ColorTable01" type="dword" data="00d28b26"/>
-			<value name="ColorTable02" type="dword" data="0000c118"/>
+			<value name="ColorTable02" type="dword" data="0026af12"/>
 			<value name="ColorTable03" type="dword" data="00756e58"/>
 			<value name="ColorTable04" type="dword" data="00164bcb"/>
-			<value name="ColorTable05" type="dword" data="00c4716c"/>
+			<value name="ColorTable05" type="dword" data="00899b75"/>
 			<value name="ColorTable06" type="dword" data="000089b5"/>
 			<value name="ColorTable07" type="dword" data="00009985"/>
 			<value name="ColorTable08" type="dword" data="00a1a193"/>
