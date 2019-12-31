@@ -41,7 +41,7 @@ cd fonts
 
 You could see the available themes at https://github.com/JanDeDobbeleer/oh-my-posh. I took the `paradox` theme and made few adjustments to look as I want it.
 
-Show how to edit...
+Show how to edit....
 
 In your powershell profile add `Set-Theme Carkey` after `import-module oh-my-posh`. I've made the following changes:
 - remove user and machine info
