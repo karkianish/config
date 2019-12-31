@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2019-12-30 18:51:02" build="191012">
+		<key name=".Vanilla" modified="2019-12-27 23:22:55" build="191012">
 			<value name="Language" type="string" data="en"/>
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data="c:\windows\system32\windowspowershell\v1.0\powershell.exe"/>
@@ -12,7 +12,7 @@
 			<value name="StartCreateDelay" type="ulong" data="100"/>
 			<value name="ColorTable00" type="dword" data="00362b00"/>
 			<value name="ColorTable01" type="dword" data="00d28b26"/>
-			<value name="ColorTable02" type="dword" data="002ca41e"/>
+			<value name="ColorTable02" type="dword" data="0026af12"/>
 			<value name="ColorTable03" type="dword" data="00756e58"/>
 			<value name="ColorTable04" type="dword" data="00164bcb"/>
 			<value name="ColorTable05" type="dword" data="00899b75"/>
@@ -102,7 +102,7 @@
 			<value name="Multi.Iterate" type="hex" data="01"/>
 			<value name="Multi.SplitWidth" type="hex" data="04"/>
 			<value name="Multi.SplitHeight" type="hex" data="04"/>
-			<value name="KeyboardHooks" type="hex" data="02"/>
+			<value name="KeyboardHooks" type="hex" data="01"/>
 			<value name="FontName" type="string" data="Meslo LG M for Powerline"/>
 			<value name="FontName2" type="string" data="Meslo LG M for Powerline"/>
 			<value name="FontAutoSize" type="hex" data="00"/>
@@ -135,8 +135,8 @@
 			<value name="Cascaded" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
 			<value name="WindowMode" type="dword" data="00000520"/>
-			<value name="ConWnd X" type="long" data="15"/>
-			<value name="ConWnd Y" type="long" data="1057"/>
+			<value name="ConWnd X" type="long" data="0"/>
+			<value name="ConWnd Y" type="long" data="1042"/>
 			<value name="LastMonitor" type="string" data="0,0,3840,2084"/>
 			<value name="ConWnd Width" type="dword" data="00000064"/>
 			<value name="ConWnd Height" type="dword" data="00000016"/>
@@ -144,7 +144,7 @@
 			<value name="QuakeStyle" type="hex" data="01"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
 			<value name="RestoreInactive" type="hex" data="00"/>
-			<value name="QuakeAnimation" type="ulong" data="100"/>
+			<value name="QuakeAnimation" type="ulong" data="300"/>
 			<value name="HideCaption" type="hex" data="00"/>
 			<value name="HideChildCaption" type="hex" data="01"/>
 			<value name="FocusInChildWindows" type="hex" data="01"/>
@@ -210,7 +210,7 @@
 			<value name="SendAltPrintScrn" type="hex" data="00"/>
 			<value name="SendPrintScrn" type="hex" data="00"/>
 			<value name="SendCtrlEsc" type="hex" data="00"/>
-			<value name="Min2Tray" type="hex" data="00"/>
+			<value name="Min2Tray" type="hex" data="01"/>
 			<value name="AlwaysShowTrayIcon" type="hex" data="00"/>
 			<value name="SafeFarClose" type="hex" data="01"/>
 			<value name="SafeFarCloseMacro" type="string" data=""/>
@@ -386,11 +386,11 @@
 			<value name="Update.DownloadPath" type="string" data="%TEMP%\ConEmu"/>
 			<value name="Update.LeavePackages" type="hex" data="00"/>
 			<value name="Update.PostUpdateCmd" type="string" data="echo Last successful update&gt;ConEmuUpdate.info &amp;&amp; date /t&gt;&gt;ConEmuUpdate.info &amp;&amp; time /t&gt;&gt;ConEmuUpdate.info"/>
-			<key name="HotKeys" modified="2019-12-30 18:51:02" build="191012">
+			<key name="HotKeys" modified="2019-08-02 13:44:27" build="180626">
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="00000011"/>
 				<value name="Multi.ArrowsModifier" type="dword" data="0000005b"/>
-				<value name="MinimizeRestore" type="dword" data="00005bc0"/>
+				<value name="MinimizeRestore" type="dword" data="00000000"/>
 				<value name="MinimizeRestore2" type="dword" data="00000000"/>
 				<value name="GlobalRestore" type="dword" data="00000000"/>
 				<value name="CdExplorerPath" type="dword" data="00000000"/>
