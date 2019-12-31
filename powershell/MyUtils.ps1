@@ -149,28 +149,53 @@ function find($searchString) {
 }
 
 # list items sorted by name
-function ls {
-    Get-ChildItem -Force | Sort-Object Name
+function ls($path) {
+    if ($path) {
+        Get-ChildItem $path -Force | Sort-Object Name
+    }
+    else {
+        Get-ChildItem -Force | Sort-Object Name
+    }
 }
 
 # list items sorted by Length in descending order. Cuz we generally care for the biggest one
-function lss{
-    Get-ChildItem -Force | Sort-Object Length, Name -Descending
+function lss($path) {
+    if ($path) {
+        Get-ChildItem $path -Force | Sort-Object Length, Name -Descending
+    }
+    else {
+        Get-ChildItem -Force | Sort-Object Length, Name -Descending
+    }
 }
 
 # list items sorted by LastWriteTime (time) in descending order. Cuz we generally care for the latest one
-function lst{
-    Get-ChildItem -Force | Sort-Object LastWriteTime, Name -Descending
+function lst {
+    if ($path) {
+        Get-ChildItem $path -Force | Sort-Object Length, Name -Descending
+    }
+    else {
+        Get-ChildItem -Force | Sort-Object LastWriteTime, Name -Descending
+    }
 }
 
 # list only files (exclude directories)
 function lsf {
-    Get-ChildItem -File -Force | Sort-Object Name
+    if ($path) {
+        Get-ChildItem $path -File -Force | Sort-Object Name
+    }
+    else {
+        Get-ChildItem -File -Force | Sort-Object Name
+    }
 }
 
-# list only directories (exclude files)
+# list only direct$path ories (exclude files) -DescLastWriteTime, ending
 function lsd {
-    Get-ChildIte -Directory -Force | Sort-Object Name
+    if ($path) {
+        Get-ChildItem $path -Directory -Force | Sort-Object Name
+    }
+    else {
+        Get-ChildItem -File -Force | Sort-Object Name
+    }
 }
 
 function rmrf($itemToRemove) {
@@ -178,14 +203,14 @@ function rmrf($itemToRemove) {
 }
 
 function StartSshAgent {
-    if (!(get-process |Where-Object {$_.Name -eq 'ssh-agent'})) {
+    if (!(get-process | Where-Object { $_.Name -eq 'ssh-agent' })) {
         Write-Host "Starting ssh-agent..."
         Start-SshAgent
     }
 }
 
 function InstallAndImport($moduleName) {
-    if (!(Get-InstalledModule -Name $moduleName -ErrorAction SilentlyContinue)){
+    if (!(Get-InstalledModule -Name $moduleName -ErrorAction SilentlyContinue)) {
         Write-Output "Installing module $moduleName"
         Install-Module $moduleName -Scope CurrentUser
     }
