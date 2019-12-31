@@ -86,7 +86,7 @@ Expand-Archive "$env:userprofile\Downloads\es-cli.zip" "$env:userprofile\es-cli"
 
 # create symlink
 ln .\powershell\Profile.ps1 $profile
-ln .\vimrc ..\_vimrc
+ln .\vimrc ..\.vimrc
 ln .\conemu.xml $conemuSettings
 
 # - git

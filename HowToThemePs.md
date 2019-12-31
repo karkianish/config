@@ -1,5 +1,4 @@
 https://gist.github.com/jchandra74/5b0c94385175c7a8d1cb39bc5157365e
-
 # Verify you have the proper fonts
 create the function below in your powershell session
 ```
@@ -33,7 +32,7 @@ Write-Host "$(U 0xE0B0) $(U 0x00B1) $(U 0xE0A0) $(U 0x27A6) $(U 0x2718) $(U 0x26
 
 `
 cd fonts
-.\install.ps1 "Meslo LG M for Powerline"
+.\install.ps1 "Meslo*"
 `
 
 # Install `oh-my-posh`
@@ -42,7 +41,7 @@ cd fonts
 
 You could see the available themes at https://github.com/JanDeDobbeleer/oh-my-posh. I took the `paradox` theme and made few adjustments to look as I want it.
 
-Show how to edit...
+Show how to edit....
 
 In your powershell profile add `Set-Theme Carkey` after `import-module oh-my-posh`. I've made the following changes:
 - remove user and machine info

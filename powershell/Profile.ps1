@@ -34,6 +34,9 @@ Set-Theme Carkey
 # $GitPromptSettings.DefaultForegroundColor = 'blue'
 
 $conemuSettings = "$env:userprofile\scoop\apps\cmder\current\vendor\conemu-maximus5\ConEmu.xml";
-$vimrc = "$env:userprofile\_vimrc";
+$vimrc = "$env:userprofile\.vimrc";
+
+# remove the default ls alias so that my custom one is used. my ls is in myutils.ps1. it shows hidden files and sorts by name.
+Remove-Item alias:ls -ErrorAction SilentlyContinue
 
 cd $env:userprofile
