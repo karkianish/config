@@ -134,20 +134,37 @@ function ln($source, $target) {
 }
 
 # get first x lines from a file 
-function head($filePath, $lines = 10) {
+function head($filePath, $lines = 30) {
     Get-Content $filePath -head $lines
 }
 
 # get last x lines from a file 
-function tail($filePath, $lines = 10) {
+function tail($filePath, $lines = 30) {
     Get-Content $filePath -tail $lines
 }
 
 # use 'everything' cli to find requested term
+$stars = "************"
 function find($searchString) {
-    &(Join-Path $env:USERPROFILE '\es-cli\es.exe') $searchString
+    Write-Host ""
+    Write-Host "$stars Displaying only top 30 results $stars"
+    Write-Host ""
+    &(Join-Path $env:USERPROFILE '\es-cli\es.exe') count:30 $searchString
 }
 
+function findf($searchString) {
+    Write-Host ""
+    Write-Host "$stars Searched files only. Displaying only the top 30 results $stars"
+    Write-Host ""
+    &(Join-Path $env:USERPROFILE '\es-cli\es.exe') count:30 file:$searchString
+}
+
+function findd($searchString) {
+    Write-Host ""
+    Write-Host "$stars Searched directories only. Displaying only the top 30 results $stars"
+    Write-Host ""
+    &(Join-Path $env:USERPROFILE '\es-cli\es.exe') count:30 file:$searchString
+}
 # list items sorted by name
 function ls($path) {
     if ($path) {

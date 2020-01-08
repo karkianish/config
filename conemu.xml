@@ -656,11 +656,12 @@
 					<value name="Count" type="long" data="1"/>
 					<value name="Cmd1" type="string" data='cmd /c "%ConEmuDir%\..\git-for-windows\bin\bash" --login -i -new_console:d:%USERPROFILE%'/>
 				</key>
-				<key name="&lt;Startup&gt;" modified="2019-12-26 16:30:38" build="191012">
+				<key name="&lt;Startup&gt;" modified="2019-12-30 23:20:22" build="191012">
 					<value name="GuiArgs" type="string" data=""/>
-					<value name="Active" type="long" data="1"/>
-					<value name="Count" type="long" data="1"/>
-					<value name="Cmd1" type="string" data='&gt;* -cur_console:d:C:\Users\karki\config -cur_console:C:C:\Users\karki\scoop\apps\cmder\current\icons\cmder.ico PowerShell -ExecutionPolicy Bypass -NoLogo -NoExit -Command "Invoke-Expression &apos;. &apos;&apos;%ConEmuDir%\..\profile.ps1&apos;&apos;&apos;"'/>
+					<value name="Active" type="long" data="2"/>
+					<value name="Count" type="long" data="2"/>
+					<value name="Cmd1" type="string" data='* -cur_console:d:C:\Users\karki -cur_console:C:C:\Users\karki\scoop\apps\cmder\current\icons\cmder.ico PowerShell -ExecutionPolicy Bypass -NoLogo -NoExit -Command "Invoke-Expression &apos;. &apos;&apos;%ConEmuDir%\..\profile.ps1&apos;&apos;&apos;"'/>
+					<value name="Cmd2" type="string" data='&gt;* -cur_console:ns1T53H -cur_console:d:C:\Users\karki -cur_console:C:C:\Users\karki\scoop\apps\cmder\current\icons\cmder.ico "C:\Windows\System32\WindowsPowerShell\v1.0\PowerShell.exe"  -ExecutionPolicy Bypass -NoLogo -NoExit -Command "Invoke-Expression &apos;. &apos;&apos;%ConEmuDir%\..\profile.ps1&apos;&apos;&apos;"'/>
 				</key>
 			</key>
 			<key name="Apps" modified="2019-08-02 13:44:27" build="180626">
