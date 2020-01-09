@@ -23,7 +23,7 @@ Set-PSReadLineKeyHandler -Chord 'j' -ScriptBlock {
 . (join-path $env:userprofile 'config\powershell\MyUtils.ps1')
 
 InstallAndImport posh-git
-InstallAndImport zlocation
+# InstallAndImport zlocation
 InstallAndImport oh-my-posh
 
 Set-Theme Carkey
