@@ -54,3 +54,7 @@ In your powershell profile add `Set-Theme Carkey` after `import-module oh-my-pos
 
 Explain the part about updating the color of prompt background from `conemu -> settings -> colors`
 
+in regards to cmder settings, to apply the updated settings you must go to
+setting -> general -> import... and point it to conemu.xml. to make sure the
+changes you make gets shared, you should link the config/conemu.xml to the
+location where conemu saves its setting.

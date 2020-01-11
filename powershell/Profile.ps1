@@ -1,8 +1,5 @@
 echo "Loading profile..."
 
-# set psgallery as trusted repo so it doesn't prompt confirmation during module installation
-# Set-PSRepository psgallery -InstallationPolicy Trusted
-#Set-ExecutionPolicy RemoteSigned -Scope Process
 
 Set-PSReadLineOption -EditMode Vi -BellStyle None -ViModeIndicator Cursor
 # map jk to esc when in vim mode
@@ -22,9 +19,9 @@ Set-PSReadLineKeyHandler -Chord 'j' -ScriptBlock {
 
 . (join-path $env:userprofile 'config\powershell\MyUtils.ps1')
 
-InstallAndImport posh-git
-# InstallAndImport zlocation
-InstallAndImport oh-my-posh
+import-module posh-git
+import-module oh-my-posh
+import-module zlocation
 
 Set-Theme Carkey
 
@@ -35,6 +32,7 @@ Set-Theme Carkey
 
 $conemuSettings = "$env:userprofile\scoop\apps\cmder\current\vendor\conemu-maximus5\ConEmu.xml";
 $vimrc = "$env:userprofile\.vimrc";
+$psThemes = "$env:userprofile\Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.342\Themes";
 
 # remove the default ls alias so that my custom one is used. my ls is in myutils.ps1. it shows hidden files and sorts by name.
 Remove-Item alias:ls -ErrorAction SilentlyContinue
