@@ -188,7 +188,7 @@ function lss($path) {
 # list items sorted by LastWriteTime (time) in descending order. Cuz we generally care for the latest one
 function lst {
     if ($path) {
-        Get-ChildItem $path -Force | Sort-Object Length, Name -Descending
+        Get-ChildItem $path -Force | Sort-Object LastWriteTime, Name -Descending
     }
     else {
         Get-ChildItem -Force | Sort-Object LastWriteTime, Name -Descending

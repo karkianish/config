@@ -5,7 +5,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;this is useful when using Vimium and I need to escape the entry field; my fav is when escaping intellisense help in VS
-;Capslock::Esc
+Capslock::Esc
 ;Capslock::Shift
 ;since we decided to use double quotes in our code-base, this is to skip having to hit shift all the damn time
 ;"::'
@@ -26,6 +26,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ::;tt::create temp table t1 as select * from limit(10);{Left 11}
 ::;ea::explain analyse
 ::;ij::inner join
+
 
 ;markdown hotkeys
 ::;js::```````javascript{Enter 2}```````{Up}
