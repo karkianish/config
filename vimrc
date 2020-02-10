@@ -107,4 +107,5 @@ map <leader>c :let @/=''<cr>
 :vnoremap <leader>Y "*Y
 
 " search highlighted text with //
+" source: https://vim.fandom.com/wiki/Search_for_visually_selected_text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
