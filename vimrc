@@ -105,3 +105,6 @@ map <leader>c :let @/=''<cr>
 :nnoremap <leader>Y "*Y
 :vnoremap <leader>y "*y
 :vnoremap <leader>Y "*Y
+
+" search highlighted text with //
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
