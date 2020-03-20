@@ -211,7 +211,7 @@ function lsd {
         Get-ChildItem $path -Directory -Force | Sort-Object Name
     }
     else {
-        Get-ChildItem -File -Force | Sort-Object Name
+        Get-ChildItem -Directory -Force | Sort-Object Name
     }
 }
 
