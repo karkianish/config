@@ -32,7 +32,7 @@ Set-Theme Carkey
 
 $conemuSettings = "$env:userprofile\scoop\apps\cmder\current\vendor\conemu-maximus5\ConEmu.xml";
 $vimrc = "$env:userprofile\.vimrc";
-$psThemes = "$env:userprofile\Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.342\Themes";
+$themes = "$env:userprofile\Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.342\Themes";
 
 # remove the default ls alias so that my custom one is used. my ls is in myutils.ps1. it shows hidden files and sorts by name.
 Remove-Item alias:ls -ErrorAction SilentlyContinue

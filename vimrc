@@ -57,13 +57,15 @@ map <leader>c :let @/=''<cr>
 :nnoremap ^ <nop>
 :nnoremap g_ <nop>
 
-" leader j will join lines since we used J for 5j
-" :nnoremap <Leader>j J
+:vnoremap H ^
+:vnoremap L $
+:vnoremap ^ <nop>
+:vnoremap g_ <nop>
 
 " yank until the end of line - put all yanked items to 'n' registry
 " to avoid conflict with delete, cut, replace, sub etc
-:nnoremap Y "nyg_
-:vnoremap Y "nyg_
+:nnoremap <Leader>Y "nyg_
+:vnoremap <Leader>Y "nyg_
 
 " yank until the beginning of line
 :nnoremap <Leader>y "n^
@@ -72,13 +74,15 @@ map <leader>c :let @/=''<cr>
 " map redo to U because i need ctrl key in visual studio
 :nnoremap U <C-R>
 
+:nnoremap <Leader>v <C-v>
+
 " map undo all for the line to leader u, i dont use it much but still
 :nnoremap <Leader>u U
 
 " to ensure delete (d/D) doesn't overwrite what was yanked.
 " always yank, cut, and paste from non-default registry
 :nnoremap p "np
-:nnoremap P "np
+:nnoremap P "nP
 :vnoremap p "np
 :vnoremap P "nP
 

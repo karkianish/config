@@ -6,14 +6,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;this is useful when using Vimium and I need to escape the entry field; my fav is when escaping intellisense help in VS
 Capslock::Esc
-;Capslock::Shift
-;since we decided to use double quotes in our code-base, this is to skip having to hit shift all the damn time
-;"::'
-;'::"
-
-
-;gist id to upload settings file
-::_gist::86828141c3f425683f7418ff047e61ba035cfa54
 
 ::;rqf::ps.plan.+.reporting-listener
 
