@@ -1,0 +1,61 @@
+- visual studio community 
+- datagrip
+- vscode
+  - apply setting sync
+- zoom
+- slack
+- open vpn
+
+scoop bucket add extras
+scoop bucket add jetbrains
+
+- scoop install 
+  - windows-terminal
+  - touch
+  - git-with-openssh
+  - postgresql
+  - ffz
+  - neovim
+  - googlechrome
+  - vscode
+  - nvm
+    - nodejs [nvm install latest]
+  - openvpn [work]
+  
+  
+Sync setting:
+  - vim
+  - code
+    code --install-extension shan.code-settings-sync 
+  - visual studio
+  - ideavimrc
+  - terminal settings
+  
+ps-modules
+  - psreadline (installed by default)
+  - psfzf
+  - zlocation
+  - pseverything
+  - oh-my-posh
+    - set-theme
+  
+
+CLI tools
+- touch
+- ffz
+- neovim
+  - configure vimrc
+- everything
+- git
+- gh cli
+
+
+- .net 461
+- .net core
+- dotnet cli
+- jre
+- node
+- npm
+- nvm
+- resharper
+- postgres
