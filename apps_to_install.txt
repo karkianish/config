@@ -1,10 +1,4 @@
 - visual studio community 
-- datagrip
-- vscode
-  - apply setting sync
-- zoom
-- slack
-- open vpn
 
 scoop bucket add extras
 scoop bucket add jetbrains
