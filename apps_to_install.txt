@@ -15,19 +15,25 @@ scoop bucket add jetbrains
   - git-with-openssh
   - postgresql
   - ffz
-  - neovim
+  - vim
+  - vifm
   - googlechrome
   - vscode
   - nvm
     - nodejs [nvm install latest]
   - openvpn [work]
+  - authy
   
-  
-Sync setting:
-  - vim
-  - code
-    code --install-extension shan.code-settings-sync 
+scoop bucket add github-gh https://github.com/cli/scoop-gh.git
+  - scoop install gh
+
+sync settings for:
+  - vscode
   - visual studio
+  - datagrip
+
+create symlink for:
+  - vimrc
   - ideavimrc
   - terminal settings
   
@@ -38,24 +44,4 @@ ps-modules
   - pseverything
   - oh-my-posh
     - set-theme
-  
-
-CLI tools
-- touch
-- ffz
-- neovim
-  - configure vimrc
-- everything
-- git
-- gh cli
-
-
-- .net 461
-- .net core
-- dotnet cli
-- jre
-- node
-- npm
-- nvm
-- resharper
-- postgres
+  - run myutils
