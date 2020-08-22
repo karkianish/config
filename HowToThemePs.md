@@ -39,6 +39,12 @@ cd fonts
 
 `install-module oh-my-posh -scope CurrentUser`
 
+themes are located in the folder
+
+`%userprofile%\Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.465\Themes`
+if you have custom themes, they need to be dropped in that location. you could open up one of the themes and try to modify them to how you want them to be.
+
+
 You could see the available themes at https://github.com/JanDeDobbeleer/oh-my-posh. I took the `paradox` theme and made few adjustments to look as I want it.
 
 Show how to edit....
