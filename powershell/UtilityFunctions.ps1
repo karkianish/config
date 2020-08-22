@@ -1,3 +1,8 @@
+ # to open the windows terminal settings in code
+ function settings() {
+    code "$env:userprofile\AppData\Local\Microsoft\Windows Terminal\settings.json"
+ }
+
 function _SetHyphenLessAlias($description) {
     $commands = Get-Command;
     foreach ($cmd in $commands) {
