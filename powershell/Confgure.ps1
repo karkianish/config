@@ -77,12 +77,6 @@ scoop install git
 scoop install everything
 scoop install vscode
 scoop install git
-# download everything cli
-_Download -url "https://www.voidtools.com/ES-1.1.0.15.zip" -fileNameWithExt "es-cli.zip"
-# unzip file to c:\es-cli. thats the folder `find` function will look to execute es-cli.exe
-Expand-Archive "$env:userprofile\Downloads\es-cli.zip" "$env:userprofile\es-cli"
-
-# install settings sync for vscode
 
 # create symlink
 ln .\powershell\Profile.ps1 $profile
@@ -101,20 +95,25 @@ ln .\conemu.xml $conemuSettings
 # 		- apply vimrc
 # 		- theme vim
 # 	- make powershell pretty and useful modules
-# 	- everything & everything for console (how to use this)
 # 	- vscode 
 # 		- all related extenstions
 # 		- settings sync
-# 	- dotnetcore
+        # - setup for python
+        # - setup for java
+# 	- dotnetcore, net461 and above
 # 	- postgres/sql server
-# 	- visual studio 2019
+# 	- visual studio community 2019
 # 		- all extensions
 # 		- settings with my keymap
 # 		- proper configuration
 # 	- notepad++
-# 	- java
+# 	- java & jre
 # 	- postman?
-# 	- one note
+# 	- one note (?)
 # 	- chrome
+#   - windows terminal
 # 	- slack, outlook
 # 	- autohotkey
+#   - ovpn
+#   datagrip, resharper
+
