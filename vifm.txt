@@ -1,0 +1,24 @@
+bookmarks:
+use vim marks for bookmark
+by default ' h -> home dir
+to view all the bookmarks ':marks'
+
+
+ctrl + w, o / :only -> to make only single pane visible at a time. tab will switch.
+
+to preview 
+	- on the curr pane -> 'e', 'q' to exit quit mode
+	- on the next pane -> 'w', then hit 'shift + tab' to scroll the preview, 'w' again to exit preview
+
+to view hidden files
+	zo -> show
+	zm -> hide
+
+rename:
+cw (to change with extension)
+cW (to change without extension)
+A as in append
+
+
+to edit - enter
+to delete - dd
