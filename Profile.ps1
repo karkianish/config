@@ -18,8 +18,6 @@ Set-PSReadLineKeyHandler -Chord 'j' -ScriptBlock {
     }
   }
 
-. (join-path $env:userprofile 'config\utility_functions.ps1')
-
 import-module posh-git
 import-module oh-my-posh
 import-module zlocation
