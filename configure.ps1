@@ -63,7 +63,7 @@ HideTaskbarPeopleIcon
 ShowSmallTaskbarIcons
 SetControlPanelSmallIcons
 
-RemoveFaxPrinter
+#RemoveFaxPrinter
 
 # remove the folders that I never use
 Remove-Item $env:userprofile\Contacts -recurse -force
