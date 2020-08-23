@@ -1,6 +1,6 @@
 Write-Output "Loading profile..."
 
-. $env:userprofile\repos\config\UtilityFunctions
+. $env:userprofile\repos\config\utility_functions
 
 Set-PSReadLineOption -EditMode Vi -BellStyle None -ViModeIndicator Cursor
 # map jk to esc when in vim mode
