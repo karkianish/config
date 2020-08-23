@@ -1,4 +1,4 @@
-# config
+## config
 This repo contains scripts to set up new windows 10 machine to match my personal preference.
 
 `set-executionpolicy remotesigned -scope currentuser`
@@ -16,3 +16,9 @@ There are still a few things that needs to be completed manually:
 - install visual studio community
 - install adobe reader
 - connect with github via ssh
+
+###todos
+- move uninstall steps after the disable steps
+- verify github can be setup with ssh
+- font installation function - make it generic
+- figure out how to automate visual studio installation
