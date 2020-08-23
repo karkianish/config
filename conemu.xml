@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2020-05-19 14:20:37" build="191012">
+		<key name=".Vanilla" modified="2020-08-22 18:15:20" build="191012">
 			<value name="Language" type="string" data="en"/>
 			<value name="StartType" type="hex" data="02"/>
 			<value name="CmdLine" type="string" data=""/>
@@ -124,7 +124,7 @@
 			<value name="bgImageColors" type="dword" data="ffffffff"/>
 			<value name="bgOperation" type="hex" data="00"/>
 			<value name="bgPluginAllowed" type="hex" data="01"/>
-			<value name="AlphaValue" type="hex" data="CA"/>
+			<value name="AlphaValue" type="hex" data="FF"/>
 			<value name="AlphaValueSeparate" type="hex" data="00"/>
 			<value name="AlphaValueInactive" type="hex" data="33"/>
 			<value name="UserScreenTransparent" type="hex" data="00"/>
@@ -135,13 +135,13 @@
 			<value name="Cascaded" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
 			<value name="WindowMode" type="dword" data="00000520"/>
-			<value name="ConWnd X" type="long" data="349"/>
-			<value name="ConWnd Y" type="long" data="249"/>
+			<value name="ConWnd X" type="long" data="-1"/>
+			<value name="ConWnd Y" type="long" data="7"/>
 			<value name="LastMonitor" type="string" data="0,0,1920,1050"/>
-			<value name="ConWnd Width" type="dword" data="000000b1"/>
-			<value name="ConWnd Height" type="dword" data="0000001a"/>
+			<value name="ConWnd Width" type="dword" data="00000099"/>
+			<value name="ConWnd Height" type="dword" data="00000027"/>
 			<value name="16bit Height" type="ulong" data="0"/>
-			<value name="QuakeStyle" type="hex" data="00"/>
+			<value name="QuakeStyle" type="hex" data="01"/>
 			<value name="Restore2ActiveMon" type="hex" data="00"/>
 			<value name="RestoreInactive" type="hex" data="00"/>
 			<value name="QuakeAnimation" type="ulong" data="300"/>
@@ -223,7 +223,7 @@
 			<value name="SendAltPrintScrn" type="hex" data="00"/>
 			<value name="SendPrintScrn" type="hex" data="00"/>
 			<value name="SendCtrlEsc" type="hex" data="00"/>
-			<value name="Min2Tray" type="hex" data="00"/>
+			<value name="Min2Tray" type="hex" data="01"/>
 			<value name="AlwaysShowTrayIcon" type="hex" data="01"/>
 			<value name="SafeFarClose" type="hex" data="01"/>
 			<value name="SafeFarCloseMacro" type="string" data=""/>
@@ -315,7 +315,7 @@
 			<value name="TaskBarOverlay" type="hex" data="01"/>
 			<value name="TaskbarProgress" type="hex" data="01"/>
 			<value name="TabCloseMacro" type="string" data=""/>
-			<value name="TabFontFace" type="string" data="Segoe UI"/>
+			<value name="TabFontFace" type="string" data="Meslo LG S for Powerline"/>
 			<value name="TabFontCharSet" type="ulong" data="0"/>
 			<value name="TabFontHeight" type="long" data="13"/>
 			<value name="SaveAllEditors" type="string" data=""/>
@@ -344,7 +344,7 @@
 			<value name="SkipFocusEvents" type="hex" data="00"/>
 			<value name="MonitorConsoleLang" type="hex" data="03"/>
 			<value name="SnapToDesktopEdges" type="hex" data="01"/>
-			<value name="AlwaysOnTop" type="hex" data="00"/>
+			<value name="AlwaysOnTop" type="hex" data="01"/>
 			<value name="SleepInBackground" type="hex" data="01"/>
 			<value name="RetardInactivePanes" type="hex" data="00"/>
 			<value name="MinimizeOnLoseFocus" type="hex" data="00"/>
@@ -385,9 +385,9 @@
 			<value name="PanView.RestoreOnStartup" type="hex" data="00"/>
 			<value name="Update.VerLocation" type="string" data=""/>
 			<value name="Update.CheckOnStartup" type="hex" data="01"/>
-			<value name="Update.CheckHourly" type="hex" data="01"/>
+			<value name="Update.CheckHourly" type="hex" data="00"/>
 			<value name="Update.ConfirmDownload" type="hex" data="01"/>
-			<value name="Update.UseBuilds" type="hex" data="03"/>
+			<value name="Update.UseBuilds" type="hex" data="01"/>
 			<value name="Update.InetTool" type="hex" data="00"/>
 			<value name="Update.InetToolCmd" type="string" data=""/>
 			<value name="Update.UseProxy" type="hex" data="00"/>
@@ -395,15 +395,15 @@
 			<value name="Update.ProxyUser" type="string" data=""/>
 			<value name="Update.ProxyPassword" type="string" data=""/>
 			<value name="Update.ExeCmdLine" type="string" data=""/>
-			<value name="Update.ArcCmdLine" type="string" data=""/>
+			<value name="Update.ArcCmdLine" type="string" data='"C:\Users\AnishKarki\scoop\apps\7zip\current\7zG.exe"  x -y "%1"'/>
 			<value name="Update.DownloadPath" type="string" data="%TEMP%\ConEmu"/>
 			<value name="Update.LeavePackages" type="hex" data="00"/>
 			<value name="Update.PostUpdateCmd" type="string" data="echo Last successful update&gt;ConEmuUpdate.info &amp;&amp; date /t&gt;&gt;ConEmuUpdate.info &amp;&amp; time /t&gt;&gt;ConEmuUpdate.info"/>
-			<key name="HotKeys" modified="2020-04-20 15:29:58" build="191012">
+			<key name="HotKeys" modified="2020-08-17 17:40:45" build="191012">
 				<value name="KeyMacroVersion" type="hex" data="02"/>
 				<value name="Multi.Modifier" type="dword" data="000000a2"/>
 				<value name="Multi.ArrowsModifier" type="dword" data="0000005b"/>
-				<value name="MinimizeRestore" type="dword" data="000011c0"/>
+				<value name="MinimizeRestore" type="dword" data="000011ba"/>
 				<value name="MinimizeRestore2" type="dword" data="00000000"/>
 				<value name="GlobalRestore" type="dword" data="00000000"/>
 				<value name="CdExplorerPath" type="dword" data="00000000"/>
@@ -421,7 +421,7 @@
 				<value name="Multi.NewConsolePopup2" type="dword" data="00000000"/>
 				<value name="Multi.NewAttach" type="dword" data="00105b47"/>
 				<value name="Multi.NewSplitV" type="dword" data="00001142"/>
-				<value name="Multi.NewSplitH" type="dword" data="00001154"/>
+				<value name="Multi.NewSplitH" type="dword" data="00101154"/>
 				<value name="Multi.SplitMaximize" type="dword" data="00005d0d"/>
 				<value name="Multi.SplitSizeVU" type="dword" data="00105d26"/>
 				<value name="Multi.SplitSizeVD" type="dword" data="00105d28"/>
@@ -455,11 +455,11 @@
 				<value name="CloseGroupPrcKey" type="dword" data="00000000"/>
 				<value name="CloseAllConKey" type="dword" data="00000000"/>
 				<value name="CloseZombiesKey" type="dword" data="00000000"/>
-				<value name="CloseExceptConKey" type="dword" data="00000000"/>
+				<value name="CloseExceptConKey" type="dword" data="00121173"/>
 				<value name="CloseToRightKey" type="dword" data="00000000"/>
 				<value name="KillProcessKey" type="dword" data="00121103"/>
 				<value name="KillAllButShellKey" type="dword" data="00125b13"/>
-				<value name="DuplicateRootKey" type="dword" data="00005b53"/>
+				<value name="DuplicateRootKey" type="dword" data="00101154"/>
 				<value name="CloseConEmuKey" type="dword" data="00005b73"/>
 				<value name="Multi.Rename" type="dword" data="80808071"/>
 				<value name="AffinityPriorityKey" type="dword" data="00005d41"/>
@@ -474,7 +474,7 @@
 				<value name="HighlightMouseSwitch" type="dword" data="00005d4c"/>
 				<value name="HighlightMouseSwitchX" type="dword" data="00005d58"/>
 				<value name="Multi.ShowTabsList" type="dword" data="00000000"/>
-				<value name="Multi.ShowTabsList2" type="dword" data="00005d7b"/>
+				<value name="Multi.ShowTabsList2" type="dword" data="00001147"/>
 				<value name="ClipboardVkAllLines" type="dword" data="00001156"/>
 				<value name="ClipboardVkFirstLine" type="dword" data="0000102d"/>
 				<value name="Key.AltNumpad" type="dword" data="00000000"/>
