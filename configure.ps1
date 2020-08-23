@@ -3,10 +3,10 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 
 # load helper functions. why two '.' is needed? to make functions from specified files avaialble in current scope
 # https://stackoverflow.com/questions/1405750/calling-a-specific-powershell-function-from-the-command-line
-. .$env:userprofile\repos\config\mouse_speed.ps1
+. $env:userprofile\repos\config\mouse_speed.ps1
 Set-MouseSpeed 18
 
-. .$env:userprofile\repos\config\win10_features.ps1
+. $env:userprofile\repos\config\win10_features.ps1
 SetUACLow
 
 UninstallMsftBloat
@@ -84,12 +84,12 @@ scoop bucket add extras jetbrains
 scoop install authy
 scoop install autohotkey
 scoop install everything
-scoop install ffz
+scoop install fzf
 scoop install git-with-openssh
 scoop install googlechrome
 scoop install nvm
 scoop install openjdk
-scoop install postgres
+scoop install postgresql
 scoop install python
 scoop install slack
 scoop install touch
@@ -121,7 +121,7 @@ install-module PSfzf -scope currentuser
 Write-Output "installing PSEverything..."
 install-module PSEverything -scope currentuser
 
-. .$env:userprofile\repos\config\utility_functions.ps1
+. $env:userprofile\repos\config\utility_functions.ps1
 # create symlink. symlink is cmdlet in utility_functions
 # powershell profile
 symlink $env:userprofile\repos\config\profile.ps1 $profile
