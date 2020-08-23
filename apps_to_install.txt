@@ -1,4 +1,7 @@
-- visual studio community 
+Manually install
+  - visual studio community (can't find url to download the executable)
+  - resharper
+  - acrobat reader
 
 scoop bucket add extras
 scoop bucket add jetbrains
