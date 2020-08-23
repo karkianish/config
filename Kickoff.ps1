@@ -1,8 +1,8 @@
 # open powershell in admin mode and run the following commands
 # install scoop
 iwr -useb get.scoop.sh | iex
-# add the 'extras' bucket for scoop
-scoop bucket add extras
+
+scoop bucket add extras jetbrains
 
 scoop install git
 

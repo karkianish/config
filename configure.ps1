@@ -3,12 +3,29 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 
 # load helper functions. why two '.' is needed? to make functions from specified files avaialble in current scope
 # https://stackoverflow.com/questions/1405750/calling-a-specific-powershell-function-from-the-command-line
-. .\utils\MyUtils.ps1
-. .\utils\WinSetup_Disable.ps1
-. .\utils\MouseSpeed.ps1
+. .\utility_functions.ps1
+. .\win10_features.ps1
+. .\mouse_speed.ps1
+
+SetUACLow
 
 Set-MouseSpeed 18
-SetUACLow
+
+UninstallMsftBloat
+UninstallThirdPartyBloat
+UninstallWindowsStore
+UninstallOneDrive
+UninstallInternetExplorer
+UninstallWorkFolders
+UninstallPowerShellV2
+UninstallPDFPrinter
+UninstallFaxAndScan
+UninstallMediaPlayer
+UninstallPowerShellISE
+UninstallHelloFace
+UninstallNET23
+UninstallXPSPrinter
+
 DisableSmartScreen
 DisableWebSearch
 DisableAppSuggestions
@@ -23,34 +40,32 @@ DisableDefenderCloud
 DisableAutorun
 DisableActionCenter
 DisableFileDeleteConfirm
-HideTaskbarSearch
-ShowSmallTaskbarIcons
-HideTaskbarPeopleIcon
 DisableSearchAppInStore
-HideRecentlyAddedApps
-SetControlPanelSmallIcons
-EnableDarkTheme
 DisableDarkTheme
 DisableStartupSound
-HideMusicFromExplorer
 DisableOneDrive
-UninstallMsftBloat
-UninstallThirdPartyBloat
-UninstallWindowsStore
 DisableXboxFeatures
 DisableEdgeShortcutCreation
 DisableIEFirstRun
-UninstallInternetExplorer
-UninstallWorkFolders
-UninstallPowerShellV2
-UninstallPDFPrinter
-RemoveFaxPrinter
-UninstallFaxAndScan
-HideTaskView
+
+Hide3DObjectsFromThisPC
+Hide3DObjectsFromExplorer
+HideMusicFromThisPC
+HideMusicFromExplorer
 HidePicturesFromExplorer
 HidePicturesFromThisPC
 HideVideosFromThisPC
 HideVideosFromExplorer
+HideNetworkFromExplorer
+HideTaskbarSearch
+HideTaskView
+HideRecentlyAddedApps
+HideTaskbarPeopleIcon
+
+ShowSmallTaskbarIcons
+SetControlPanelSmallIcons
+
+RemoveFaxPrinter
 
 # remove the folders that I never use
 Remove-Item $env:userprofile\Contacts -recurse -force
@@ -66,22 +81,40 @@ Remove-Item $env:userprofile\MicrosoftEdgeBackups -recurse -force
 
 # install scoop. if scoop is already installed, this script will give error, which is okay.
 iwr -useb get.scoop.sh | iex
+
 # add the 'extras' bucket for scoop
-scoop bucket add extras
+scoop bucket add extras jetbrains
 
 # install apps from scoop
-scoop install touch
-scoop install cmder
-scoop install vim
-scoop install git
+scoop install authy
 scoop install everything
+scoop install ffz
+scoop install git-with-openssh
+scoop install googlechrome
+scoop install nvm
+scoop install postgres
+scoop install touch
+scoop install vifm
+scoop install vim
 scoop install vscode
-scoop install git
+scoop install windows-terminal
 
-# create symlink
-ln .\powershell\Profile.ps1 $profile
-ln .\vimrc ..\.vimrc
-ln .\conemu.xml $conemuSettings
+# install github cli. must run after installing git.
+scoop bucket add github-gh https://github.com/cli/scoop-gh.git
+scoop install gh 
+
+# install latest node via nvm rather than scoop
+nvm install latest
+
+# create symlink. symlink is cmdlet in utility_functions
+# windows terminal settings
+symlink $env:userprofile\config\terminal_settings.json "$env:userprofile\AppData\Local\Microsoft\Windows Terminal\settings.json"
+# vimrc
+symlink $env:userprofile\config\vimrc $env:userprofile\.vimrc
+# powershell profile
+symlink $env:userprofile\config\profile.ps1 $profile
+
+# Inside powershell profile, copy custom them to $env:userprofile\Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.465\Themes
 
 # - git
 # 	- repos and setting files

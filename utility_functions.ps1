@@ -129,7 +129,7 @@ function cmv($src, $dest) {
 }
 
 # create symlink
-function ln($source, $target) {
+function symlink($source, $target) {
     if (Test-Path $target) {
         Write-Output "$target exists. Deleting..."
         Remove-Item $target -Recurse -Force

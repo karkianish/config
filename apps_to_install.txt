@@ -3,8 +3,7 @@ Manually install
   - resharper
   - acrobat reader
 
-scoop bucket add extras
-scoop bucket add jetbrains
+scoop bucket add extras jetbrains
 
 - scoop install 
   - windows-terminal
@@ -24,6 +23,10 @@ scoop bucket add jetbrains
 scoop bucket add github-gh https://github.com/cli/scoop-gh.git
   - scoop install gh
 
+// set up github username and email
+
+
+
 sync settings for:
   - vscode
   - visual studio
@@ -31,6 +34,7 @@ sync settings for:
 
 create symlink for:
   - vimrc
+  - powershell profile
   - ideavimrc
   - terminal settings
   
