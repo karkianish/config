@@ -97,6 +97,7 @@ scoop install vifm
 scoop install vim
 scoop install vscode
 scoop install windows-terminal
+scoop install yarn
 
 # install github cli. must run after installing git.
 scoop bucket add github-gh https://github.com/cli/scoop-gh.git
@@ -104,6 +105,9 @@ scoop install gh
 
 # install latest node via nvm rather than scoop
 nvm install latest
+
+# instal settings-sync 
+code --install-extension shan.code-settings-sync
 
 #set psgallery as trusted repo so it doesn't prompt confirmation during module installation 
 Write-Output "setting psgallery as trusted PSRepository..."
@@ -135,7 +139,3 @@ symlink $env:userprofile\repos\config\vimrc $env:userprofile\.ideavimrc
 symlink $env:userprofile\repos\config\ParadoxModified.psm1 $env:userprofile\Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.465\Themes\ParadoxModified.psm1
 # move the modified theme to the theme folder
 # symlink $env:userprofile\repos\config\conemu.xml $env:userprofile\scoop\apps\cmder\current\vendor\conemu-maximus5\conemu.xml
-
-
-git config --global user.name "Anish Karki"
-git config --global user.email "karkianish@hotmail.com"
