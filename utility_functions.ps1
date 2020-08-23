@@ -1,9 +1,4 @@
- # to open the windows terminal settings in code
- function settings() {
-    code "$env:userprofile\AppData\Local\Microsoft\Windows Terminal\settings.json"
- }
-
-function _SetHyphenLessAlias($description) {
+function SetHyphenLessAlias($description) {
     $commands = Get-Command;
     foreach ($cmd in $commands) {
         $hyphenIndex = $cmd.Name.IndexOf("-");
@@ -14,19 +9,19 @@ function _SetHyphenLessAlias($description) {
     }
 }
 
-function _UninstallApp($appName) {
+function uninstall($appName) {
     Get-AppxPackage $appName | Remove-AppxPackage;
 }
 
 # get list of installed and removable apps
 # Get-AppxPackage | where-object nonremovable -ne "True" | select name, nonremovable
 
-function _GetPortInfo($portNum) {
+function GetPortInfo($portNum) {
     Get-Process -Id (Get-NetTCPConnection -LocalPort $portNum).OwningProcess;
 }
 
 # create and add public ssh key to github 
-function _SetSshForGithub ($rsaFilename, $sshPassphrase, $githubUsername, $githubPassword, $otp) {
+function SetSshForGithub ($rsaFilename, $sshPassphrase, $githubUsername, $githubPassword, $otp) {
     # todo - add param block and make params mandatory
     Write-Output "generating ssh key";
     if (!$PSBoundParameters.ContainsKey('sshPassphrase') -or $sshPassphrase -eq "") {
@@ -68,7 +63,7 @@ function _SetSshForGithub ($rsaFilename, $sshPassphrase, $githubUsername, $githu
 }
 
 # to download file
-function _Download($url, $saveLocation, $fileNameWithExt) {
+function download($url, $saveLocation, $fileNameWithExt) {
     if (!$saveLocation) {
         $saveLocation = "$env:USERPROFILE\Downloads"
     }
@@ -237,17 +232,8 @@ function InstallAndImport($moduleName) {
         Install-Module $moduleName -Scope CurrentUser
     }
 
+    Write-Output "Importing module $moduleName"
     Import-Module $moduleName
-}
-
-function InstallEsCli {
-
-    #check if es-cli\es.exe already exists
-
-    _Download -url "https://www.voidtools.com/ES-1.1.0.15.zip" -fileNameWithExt "es-cli.zip"
-
-    # unzip file to c:\es-cli. thats the folder `find` function will look to execute es-cli.exe
-    Expand-Archive "$env:userprofile\Downloads\es-cli.zip" "$env:userprofile\es-cli"
 }
 
 function InstallFontsForTheme {

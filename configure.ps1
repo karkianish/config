@@ -3,13 +3,11 @@ Set-ExecutionPolicy Unrestricted -Scope Process
 
 # load helper functions. why two '.' is needed? to make functions from specified files avaialble in current scope
 # https://stackoverflow.com/questions/1405750/calling-a-specific-powershell-function-from-the-command-line
-. .\utility_functions.ps1
-. .\win10_features.ps1
-. .\mouse_speed.ps1
-
-SetUACLow
-
+. .$env:userprofile\repos\config\mouse_speed.ps1
 Set-MouseSpeed 18
+
+. .$env:userprofile\repos\config\win10_features.ps1
+SetUACLow
 
 UninstallMsftBloat
 UninstallThirdPartyBloat
@@ -79,20 +77,21 @@ Remove-Item $env:userprofile\Searches -recurse -force
 Remove-Item $env:userprofile\Videos -recurse -force
 Remove-Item $env:userprofile\MicrosoftEdgeBackups -recurse -force
 
-# install scoop. if scoop is already installed, this script will give error, which is okay.
-iwr -useb get.scoop.sh | iex
-
 # add the 'extras' bucket for scoop
 scoop bucket add extras jetbrains
 
 # install apps from scoop
 scoop install authy
+scoop install autohotkey
 scoop install everything
 scoop install ffz
 scoop install git-with-openssh
 scoop install googlechrome
 scoop install nvm
+scoop install openjdk
 scoop install postgres
+scoop install python
+scoop install slack
 scoop install touch
 scoop install vifm
 scoop install vim
@@ -106,47 +105,37 @@ scoop install gh
 # install latest node via nvm rather than scoop
 nvm install latest
 
+#set psgallery as trusted repo so it doesn't prompt confirmation during module installation 
+Write-Output "setting psgallery as trusted PSRepository..."
+Set-PSRepository psgallery -InstallationPolicy Trusted
+Write-Output "updating execution policy..."
+Set-ExecutionPolicy RemoteSigned -Scope Process
+Write-Output "installing posh-git..."
+install-module posh-git -scope currentuser
+Write-Output "installing oh-my-posh..."
+install-module oh-my-posh -scope currentuser
+Write-Output "installing zlocation..."
+install-module zlocation -scope currentuser
+Write-Output "installing PSfzf..."
+install-module PSfzf -scope currentuser
+Write-Output "installing PSEverything..."
+install-module PSEverything -scope currentuser
+
+. .$env:userprofile\repos\config\utility_functions.ps1
 # create symlink. symlink is cmdlet in utility_functions
-# windows terminal settings
-symlink $env:userprofile\config\terminal_settings.json "$env:userprofile\AppData\Local\Microsoft\Windows Terminal\settings.json"
-# vimrc
-symlink $env:userprofile\config\vimrc $env:userprofile\.vimrc
 # powershell profile
-symlink $env:userprofile\config\profile.ps1 $profile
+symlink $env:userprofile\repos\config\profile.ps1 $profile
+# windows terminal settings
+symlink $env:userprofile\repos\config\terminal_settings.json "$env:userprofile\AppData\Local\Microsoft\Windows Terminal\settings.json"
+# vimrc
+symlink $env:userprofile\repos\config\vimrc $env:userprofile\.vimrc
+# .ideavimrc - for datagrip
+symlink $env:userprofile\repos\config\vimrc $env:userprofile\.ideavimrc
+# move the modified theme to the theme folder
+symlink $env:userprofile\repos\config\ParadoxModified.psm1 $env:userprofile\Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.465\Themes\ParadoxModified.psm1
+# move the modified theme to the theme folder
+# symlink $env:userprofile\repos\config\conemu.xml $env:userprofile\scoop\apps\cmder\current\vendor\conemu-maximus5\conemu.xml
 
-# Inside powershell profile, copy custom them to $env:userprofile\Documents\WindowsPowerShell\Modules\oh-my-posh\2.0.465\Themes
 
-# - git
-# 	- repos and setting files
-# - remove all ms junk
-# - remove all 3rd parties junk
-# - ui tweaks for icon size, task bar etc
-# - windows without tying it to email address?
-# - disable cortana and bunch of ui settings
-# - to install
-# 	- vim
-# 		- apply vimrc
-# 		- theme vim
-# 	- make powershell pretty and useful modules
-# 	- vscode 
-# 		- all related extenstions
-# 		- settings sync
-        # - setup for python
-        # - setup for java
-# 	- dotnetcore, net461 and above
-# 	- postgres/sql server
-# 	- visual studio community 2019
-# 		- all extensions
-# 		- settings with my keymap
-# 		- proper configuration
-# 	- notepad++
-# 	- java & jre
-# 	- postman?
-# 	- one note (?)
-# 	- chrome
-#   - windows terminal
-# 	- slack, outlook
-# 	- autohotkey
-#   - ovpn
-#   datagrip, resharper
-
+git config --global user.name "Anish Karki"
+git config --global user.email "karkianish@hotmail.com"

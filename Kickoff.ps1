@@ -1,14 +1,9 @@
 # open powershell in admin mode and run the following commands
 # install scoop
 iwr -useb get.scoop.sh | iex
-
-scoop bucket add extras jetbrains
-
 scoop install git
 
 # configure git
-git config --global user.name "Anish Karki"
-git config --global user.email "karkianish@hotmail.com"
 
 # create and add public ssh key to github 
 function _SetSshForGithub ($rsaFilename, $sshPassphrase, $githubUsername, $githubPassword, $otp) {
