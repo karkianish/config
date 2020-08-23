@@ -1,6 +1,8 @@
 # config
 This repo contains scripts to set up new windows 10 machine to match my personal preference.
 
+`set-executionpolicy remotesigned -scope currentuser`
+
 `iwr -useb get.scoop.sh | iex`
 
 `scoop install git-with-openssh`
