@@ -236,13 +236,13 @@ function InstallAndImport($moduleName) {
     Import-Module $moduleName
 }
 
-function InstallFontsForTheme {
+function InstallFonts() {
+    $destination = "$env:userprofile\downloads\CascadiaFonts.zip"
+    Invoke-WebRequest https://github.com/microsoft/cascadia-code/releases/download/v2007.01/CascadiaCode-2007.01.zip -OutFile $destination
 
-    #check if the repo has already been downloaded
+    Expand-Archive -path $destination -destinationPath $env:userprofile\downloads\CascadiaFonts -Force
 
-    # Install fonts
-    git clone https://github.com/powerline/fonts.git $env:USERPROFILE\fonts
-
-    cd fonts
-    .\install.ps1 "Meslo*"
+    # https://superuser.com/a/788759/383506
+    $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
+    Get-ChildItem $env:userprofile\downloads\CascadiaFonts\ttf\*.ttf | ForEach-Object { $fonts.CopyHere($_.fullname, 8) }
 }
