@@ -39,7 +39,7 @@ DisableAutorun
 DisableActionCenter
 DisableFileDeleteConfirm
 DisableSearchAppInStore
-DisableDarkTheme
+#DisableDarkTheme
 DisableStartupSound
 DisableOneDrive
 DisableXboxFeatures
