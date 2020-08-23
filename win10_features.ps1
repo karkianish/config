@@ -4074,7 +4074,3 @@ Function UnpinTaskbarIcons {
 ##########
 #endregion Unpinning
 ##########
-
-
-# Export functions
-Export-ModuleMember -Function *
