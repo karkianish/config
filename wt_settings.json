@@ -32,7 +32,7 @@
             //"fontFace": "Meslo LG S for Powerline",
             "fontFace": "cascadia mono pl",
             "startingDirectory": "%userprofile%\\repos",
-            "colorScheme": "Karki",
+            "colorScheme": "Solarized Dark",
             "fontSize": 10
 
             // Put settings here that you want to apply to all profiles.
@@ -104,8 +104,6 @@
          { "command": "find", "keys": "ctrl+f" },
  
          // Tab Management
-         // "command": "closeTab" is unbound by default.
-         //   The closeTab command closes a tab without confirmation, even if it has multiple panes.
          { "command": "duplicateTab", "keys": "ctrl+t" },
          { "command": "nextTab", "keys": "ctrl+tab" },
          { "command": "nextTab", "keys": "ctrl+shift+k" },
@@ -124,12 +122,6 @@
          { "command": { "action": "resizePane", "direction": "up" }, "keys": "alt+shift+k" },
          { "command": { "action": "moveFocus", "direction": "left" }, "keys": "ctrl+shift+h" },
          { "command": { "action": "moveFocus", "direction": "right" }, "keys": "ctrl+shift+l" },
- 
-         // Scrollback
-         { "command": "scrollDown", "keys": "ctrl+shift+down" },
-         { "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" },
-         { "command": "scrollUp", "keys": "ctrl+shift+up" },
-         { "command": "scrollUpPage", "keys": "ctrl+shift+pgup" },
  
          // Visual Adjustments
          { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
