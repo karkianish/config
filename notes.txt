@@ -1,3 +1,5 @@
+			scoop uninstall authy autohotkey datagrip docker everything fzf git-with-openssh googlechrome nvm openjdk postgresql python slack touch vifm vi vscode
+			
 			<value name="ColorTable00" type="dword" data="00362b00"/>
 			<value name="ColorTable01" type="dword" data="00d28b26"/>
 			<value name="ColorTable02" type="dword" data="0036b64f"/>
