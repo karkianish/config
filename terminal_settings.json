@@ -32,7 +32,7 @@
             //"fontFace": "Meslo LG S for Powerline",
             "fontFace": "cascadia mono pl",
             "startingDirectory": "%userprofile%\\repos",
-            "colorScheme": "Solarized Dark",
+            "colorScheme": "Karki",
             "fontSize": 10
 
             // Put settings here that you want to apply to all profiles.
@@ -71,18 +71,18 @@
             "background": "#282C34",
             "cursorColor": "#FFFFFF",
             "black": "#282C34",
-            "red": "#E06C75",
-            "green": "#98C379",
+            "red": "#963b43",
+            "green": "#5c7c43",
             "yellow": "#9b7735",
-            "blue" : "#3890d8",
+            "blue" : "#2e7ab8",
             "purple": "#54806d",
             "cyan": "#56B6C2",
             "white": "#DCDFE4",
-            "brightBlack": "#5A6374",
+            "brightBlack": "#9ce7a6", // for switches
             "brightRed": "#E06C75",
             "brightGreen": "#98C379",
             "brightYellow": "#E5C07B",
-            "brightBlue": "#61AFEF",
+            "brightBlue": "#4278a5",
             "brightPurple": "#C678DD",
             "brightCyan": "#56B6C2",
             "brightWhite": "#DCDFE4"
