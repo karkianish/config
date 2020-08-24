@@ -93,6 +93,14 @@ function def($functionName) {
     (Get-Command $functionName).Definition | more 
 }
 
+function cdh {
+   set-location $env:userprofile
+}
+
+function cdp {
+    set-location c:\repos\plan-analytics
+}
+
 # cd and ls combined
 function cdls ($path) {
     Set-Location $path
@@ -217,6 +225,10 @@ function lsd {
 
 function rmrf($itemToRemove) {
     Remove-Item $itemToRemove -Recurse -Force
+}
+
+function utils {
+    vi $env:userprofile/repos/config/utility_functions.ps1
 }
 
 function StartSshAgent {
