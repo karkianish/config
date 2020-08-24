@@ -18,13 +18,14 @@ Set-PSReadLineKeyHandler -Chord 'j' -ScriptBlock {
     }
   }
 
-import-module posh-git
 import-module oh-my-posh
-import-module zlocation
+Set-Theme ParadoxModified
+
+import-module posh-git
 import-module PSfzf
 import-module PSEverything
-
-Set-Theme ParadoxModified
+# zlocation must be loaded AFTER promp customization
+import-module zlocation
 
 # Keep this block for future reference. Add timestamp to prompt. since I have modified the paradox theme, I dont need lines below. 
 # $GitPromptSettings.DefaultPromptPrefix = "$(get-date -Format HH:mm:ss.fff) "
