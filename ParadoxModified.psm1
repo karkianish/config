@@ -35,7 +35,7 @@ function Write-Theme {
 
     # $user = $sl.CurrentUser
     # $computer = [System.Environment]::MachineName
-    $prompt += Write-Prompt -Object "$adminSymbol$timeStamp " -ForegroundColor $sl.Colors.PromptForegroundColor -BackgroundColor $sl.Colors.SessionInfoBackgroundColor
+    $prompt += Write-Prompt -Object "$adminSymbol$timeStamp " -ForegroundColor $sl.Colors.PromptBackgroundColor -BackgroundColor $sl.Colors.SessionInfoBackgroundColor
 
     if (Test-VirtualEnv) {
         $prompt += Write-Prompt -Object "$($sl.PromptSymbols.SegmentForwardSymbol) " -ForegroundColor $sl.Colors.SessionInfoBackgroundColor -BackgroundColor $sl.Colors.VirtualEnvBackgroundColor
