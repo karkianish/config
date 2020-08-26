@@ -2,13 +2,18 @@ Write-Output "Loading profile..."
 
 . $env:userprofile\repos\config\utility_functions
 
-Set-PSReadLineOption -EditMode Vi -BellStyle None -ViModeIndicator Cursor
 # map jk to esc when in vim mode
 # source: https://github.com/PowerShell/PSReadLine/issues/759#issuecomment-518363364
+
+import-module oh-my-posh
+Set-Theme ParadoxModified
+
+Set-PSReadLineOption -EditMode Vi -BellStyle None -ViModeIndicator Cursor
+
 Set-PSReadLineKeyHandler -Chord 'j' -ScriptBlock {
     if ([Microsoft.PowerShell.PSConsoleReadLine]::InViInsertMode()) {
       $key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-      if ($key.Character -eq 'k') {
+      if ($key.Character -eq 'j') {
         [Microsoft.PowerShell.PSConsoleReadLine]::ViCommandMode()
       }
       else {
@@ -17,10 +22,7 @@ Set-PSReadLineKeyHandler -Chord 'j' -ScriptBlock {
       }
     }
   }
-
-import-module oh-my-posh
-Set-Theme ParadoxModified
-
+  
 import-module posh-git
 import-module PSfzf
 import-module PSEverything
