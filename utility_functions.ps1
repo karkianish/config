@@ -93,6 +93,25 @@ function def($functionName) {
     (Get-Command $functionName).Definition | more 
 }
 
+function config {
+   set-location $env:userprofile\repos\config
+}
+
+function dl {
+   set-location $env:userprofile\downloads
+   ls
+}
+
+function docs {
+   set-location $env:userprofile\documents
+   ls
+}
+
+function gs {
+   set-location $env:userprofile\documents\grad_school
+   ls
+}
+
 function cdh {
    set-location $env:userprofile
 }
@@ -258,3 +277,15 @@ function InstallFonts() {
     $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
     Get-ChildItem $env:userprofile\downloads\CascadiaFonts\ttf\*.ttf | ForEach-Object { $fonts.CopyHere($_.fullname, 8) }
 }
+
+# notes
+function n($text) {
+    $ts = Get-Date -Format "MM/dd/yyyy HH:mm:ss" ;
+    Add-Content $env:userprofile\notes.txt -Value "$ts $text"
+}
+
+function notes() {
+    vi $env:USERPROFILE\notes.txt
+}
+
+#set-location (Get-ChildItem -name | fzf) something like this or even better?
