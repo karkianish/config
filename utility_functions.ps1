@@ -99,7 +99,7 @@ function config {
 
 function dl {
    set-location $env:userprofile\downloads
-   ls
+   lst
 }
 
 function docs {
@@ -109,6 +109,11 @@ function docs {
 
 function gs {
    set-location $env:userprofile\documents\grad_school
+   ls
+}
+
+function ai {
+   set-location $env:userprofile\documents\grad_school\cs7638
    ls
 }
 
