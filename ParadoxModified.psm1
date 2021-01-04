@@ -53,7 +53,7 @@ function Write-Theme {
     $status = Get-VCSStatus
     if ($status) {
         $themeInfo = Get-VcsInfo -status ($status)
-        $lastColor = $themeInfo.BackgroundColor
+        $lastColor = if ($themeInfo.BackgroundColor -eq 'DarkYellow') {[ConsoleColor]::'DarkCyan' } Else { $themeInfo.BackgroundColor }
         $prompt += Write-Prompt -Object $($sl.PromptSymbols.SegmentForwardSymbol) -ForegroundColor $sl.Colors.PromptBackgroundColor -BackgroundColor $lastColor
         $prompt += Write-Prompt -Object " $($themeInfo.VcInfo) " -BackgroundColor $lastColor -ForegroundColor $sl.Colors.PromptForegroundColor
     }
