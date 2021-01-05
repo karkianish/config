@@ -97,6 +97,11 @@ function config {
    set-location $env:userprofile\repos\config
 }
 
+function repos {
+   set-location $env:userprofile\repos
+   ls
+}
+
 function dl {
    set-location $env:userprofile\downloads
    lst
