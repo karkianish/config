@@ -180,6 +180,10 @@ function tail($filePath, $lines = 30) {
     Get-Content $filePath -tail $lines
 }
 
+function vimrc(){
+    nvim ~\repos\config\vimrc
+}
+
 # use 'everything' cli to find requested term
 $stars = "************"
 function find($searchString) {

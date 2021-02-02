@@ -1,3 +1,10 @@
+" Don't try to be vi compatible
+set nocompatible
+
+set belloff=all" set ; as leader
+
+let mapleader=";"
+
 call plug#begin('~/.config/nvim/plugged')
 	Plug 'mhartington/oceanic-next'
 	Plug 'scrooloose/nerdtree'
@@ -10,9 +17,40 @@ call plug#begin('~/.config/nvim/plugged')
 	" typescript highlights
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
+
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+" https://robindouglas.uk/powershell/vim/2018/04/05/PowerShell-with-Vim.html
+set shell=powershell.exe
+set shellcmdflag=-NoProfile\ -NoLogo\ -NonInteractive\ -Command
+set shellpipe=|
+set shellredir=>
+
+" Enable Windows clipboard copy/paste
+" source $VIMRUNTIME/mswin.vim
+
+let g:airline_powerline_fonts=1
+let g:airline_solarized_bg='dark'
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+if(has("termguicolors"))
+  set termguicolors
+endif
+
+syntax enable
+colorscheme OceanicNext
+
 " neovim
+" set active buffer as the root of the nerdtree
+set autochdir
+let NERDTreeChDirMode=2
+
+" Mirror the NERDTree before showing it. This makes it the same on all tabs.
+nnoremap <leader>nn :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
@@ -21,23 +59,26 @@ let g:NERDTreeStatusline = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
 " map ctrl+b to toggle nerd tree
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 
 " integrated terminal
 " open new split panes to right and below
 set splitright
 set splitbelow
+
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
+
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-" open terminal on ctrl+n
+
+" open terminal on ctrl+;
 function! OpenTerminal()
-  split term://bash
+  split term:\\powershell
   resize 10
 endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
+nnoremap <C-;> :call OpenTerminal()<CR>
 
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
@@ -52,11 +93,11 @@ nnoremap <A-l> <C-w>l
 
 " fzf
 nnoremap <C-p> :FZF<CR>
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit'
-  \}
+" let g:fzf_action = {
+ " \ '<leader>ot': 'tab split',
+ " \ '<leader>oh': 'split',
+ " \ '<leader>ov': 'vsplit'
+ " \}
 
 
 au FileType javascript setlocal formatprg=prettier
@@ -91,16 +132,8 @@ nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
 " be aware that you cant add comments AFTER your mapping. 
 " it will be counted as mapping instructions. Therefore comments are on line before.
 
-" Don't try to be vi compatible
-set nocompatible
-
-set belloff=all
-
 " so backspace functions normally
 set backspace=indent,eol,start
-
-" set ; as leader
-let mapleader=";"
 
 " enable syntax highlighting
 syntax on
@@ -123,6 +156,9 @@ set ruler
 " wrap after 80 char width is reached
 set wrap
 set textwidth=80
+
+set tabstop=2
+set shiftwidth=2
 
 " set the cursor where it was before yanking in visual mode
 :vnoremap y "nygv<ESC>
