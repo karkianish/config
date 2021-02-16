@@ -6,20 +6,20 @@ set belloff=all" set ; as leader
 let mapleader=";"
 
 call plug#begin('~/.config/nvim/plugged')
-	Plug 'mhartington/oceanic-next'
-	Plug 'scrooloose/nerdtree'
-	Plug 'ryanoasis/vim-devicons'
-	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-	Plug 'junegunn/fzf.vim'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
-
-	" typescript highlights
-	Plug 'leafgarland/typescript-vim'
-	Plug 'peitalin/vim-jsx-typescript'
-
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+"	Plug 'mhartington/oceanic-next'
+"	Plug 'scrooloose/nerdtree'
+"	Plug 'ryanoasis/vim-devicons'
+"	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"	Plug 'junegunn/fzf.vim'
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"	let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+"
+"	" typescript highlights
+"	Plug 'leafgarland/typescript-vim'
+"	Plug 'peitalin/vim-jsx-typescript'
+"
+"  Plug 'vim-airline/vim-airline'
+"  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " https://robindouglas.uk/powershell/vim/2018/04/05/PowerShell-with-Vim.html
@@ -161,7 +161,7 @@ set tabstop=2
 set shiftwidth=2
 
 " set the cursor where it was before yanking in visual mode
-:vnoremap y "nygv<ESC>
+:vnoremap y /"nygv<ESC>
 
 " map jj to esc - just using inoremap because we need this feature only in insert mode
 :inoremap jj <ESC>

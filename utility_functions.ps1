@@ -181,7 +181,7 @@ function tail($filePath, $lines = 30) {
 }
 
 function vimrc(){
-    nvim ~\repos\config\vimrc
+    code ~\repos\config\vimrc
 }
 
 # use 'everything' cli to find requested term
@@ -261,7 +261,7 @@ function rmrf($itemToRemove) {
 }
 
 function utils {
-    vi $env:userprofile/repos/config/utility_functions.ps1
+    code $env:userprofile/repos/config/utility_functions.ps1
 }
 
 function StartSshAgent {
