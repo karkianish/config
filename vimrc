@@ -6,7 +6,7 @@ set belloff=all" set ; as leader
 let mapleader=";"
 
 call plug#begin('~/.config/nvim/plugged')
-"	Plug 'mhartington/oceanic-next'
+  Plug 'mhartington/oceanic-next'
 "	Plug 'scrooloose/nerdtree'
 "	Plug 'ryanoasis/vim-devicons'
 "	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -20,46 +20,55 @@ call plug#begin('~/.config/nvim/plugged')
 "
 "  Plug 'vim-airline/vim-airline'
 "  Plug 'vim-airline/vim-airline-themes'
+   Plug 'easymotion/vim-easymotion'
 call plug#end()
 
+" begin sneak configuration start
+"let g:sneak#label = 1
+" case insensitive sneak
+"let g:sneak#use_ic_scs = 1
+" end
+
+map <Leader> <Plug>(easymotion-s) 
+
 " https://robindouglas.uk/powershell/vim/2018/04/05/PowerShell-with-Vim.html
-set shell=powershell.exe
-set shellcmdflag=-NoProfile\ -NoLogo\ -NonInteractive\ -Command
-set shellpipe=|
-set shellredir=>
+"set shell=powershell.exe
+"set shellcmdflag=-NoProfile\ -NoLogo\ -NonInteractive\ -Command
+"set shellpipe=|
+"set shellredir=>
 
 " Enable Windows clipboard copy/paste
 " source $VIMRUNTIME/mswin.vim
 
-let g:airline_powerline_fonts=1
-let g:airline_solarized_bg='dark'
-
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-if(has("termguicolors"))
-  set termguicolors
-endif
-
+"let g:airline_powerline_fonts=1
+"let g:airline_solarized_bg='dark'
+"
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"
+"if(has("termguicolors"))
+"  set termguicolors
+"endif
+"
 syntax enable
 colorscheme OceanicNext
 
 " neovim
 " set active buffer as the root of the nerdtree
-set autochdir
-let NERDTreeChDirMode=2
+"set autochdir
+"let NERDTreeChDirMode=2
 
 " Mirror the NERDTree before showing it. This makes it the same on all tabs.
-nnoremap <leader>nn :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+"nnoremap <leader>nn :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Toggle
-" map ctrl+b to toggle nerd tree
-nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
+"let g:NERDTreeShowHidden = 1
+"let g:NERDTreeMinimalUI = 1
+"let g:NERDTreeIgnore = []
+"let g:NERDTreeStatusline = ''
+"" Automaticaly close nvim if NERDTree is only thing left open
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"" Toggle
+"" map ctrl+b to toggle nerd tree
+"nnoremap <silent> <leader>nt :NERDTreeToggle<CR>
 
 
 " integrated terminal
@@ -73,62 +82,6 @@ tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
-" open terminal on ctrl+;
-function! OpenTerminal()
-  split term:\\powershell
-  resize 10
-endfunction
-nnoremap <C-;> :call OpenTerminal()<CR>
-
-" use alt+hjkl to move between split/vsplit panels
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
-
-
-" fzf
-nnoremap <C-p> :FZF<CR>
-" let g:fzf_action = {
- " \ '<leader>ot': 'tab split',
- " \ '<leader>oh': 'split',
- " \ '<leader>ov': 'vsplit'
- " \}
-
-
-au FileType javascript setlocal formatprg=prettier
-au FileType javascript.jsx setlocal formatprg=prettier
-au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
-au FileType html setlocal formatprg=js-beautify\ --type\ html
-au FileType scss setlocal formatprg=prettier\ --parser\ css
-au FileType css setlocal formatprg=prettier\ --parser\ css
-
-let g:ale_linters = {
-\   'javascript': ['eslint']
-\}
-let g:ale_fixers = {
-  \    'javascript': ['eslint'],
-  \    'typescript': ['prettier', 'tslint'],
-  \    'react': ['eslint'],
-  \    'css': ['prettier'],
-  \    'scss': ['prettier'],
-  \    'html': ['prettier'],
-\}
-
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-stdio']
-    \ }
-
-nnoremap <leader>l :call LanguageClient_contextMenu()<CR>
-nnoremap K :call LanguageClient#textDocument_hover()<CR>
-nnoremap gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
-
-
 " be aware that you cant add comments AFTER your mapping. 
 " it will be counted as mapping instructions. Therefore comments are on line before.
 
@@ -136,7 +89,7 @@ nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
 set backspace=indent,eol,start
 
 " enable syntax highlighting
-syntax on
+syntax enable
 
 " refresh my vimrc
 command! RV source $MYVIMRC <bar> echo "refreshed vimrc!"
@@ -145,7 +98,7 @@ command! RV source $MYVIMRC <bar> echo "refreshed vimrc!"
 :nnoremap <leader><leader><leader> :vsplit $MYVIMRC<cr>
 
 " use system clipboard to paste items copied outside of vim i.e. default register will be *
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Show line numbers
 set number
@@ -159,7 +112,7 @@ set textwidth=80
 
 set tabstop=2
 set shiftwidth=2
-
+set mouse=a
 " set the cursor where it was before yanking in visual mode
 :vnoremap y /"nygv<ESC>
 
@@ -174,6 +127,15 @@ set smartcase
 set showmatch
 " clear search
 map <leader>c :let @/=''<cr>
+
+
+" Better indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" stay in normal mode after opening a line
+:nnoremap o o<Esc>
+:nnoremap O O<Esc>
 
 "nmap - normal mode map
 "imap - insert mode map
