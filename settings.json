@@ -1,0 +1,248 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  // to open a file in the current instance of visual studio
+  "window.openFilesInNewWindow": "off",
+
+  // to display symbols on command line prompts
+  "terminal.integrated.fontFamily": "Menlo for Powerline",
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "javascript.validate.enable": false,
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "editor.minimap.enabled": false,
+  "editor.parameterHints.enabled": false,
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+  "workbench.editor.enablePreview": true,
+  "vim.leader": ";",
+ 
+  "vim.useCtrlKeys": false,
+  "vim.easymotion": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.sneak": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.foldfix": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // to keep cursor at the end after yanking a visual block
+    {
+      "before": ["Y"],
+      "after": ["Y", "g", "v", "<Esc>"]
+    },
+    {
+      "before": ["y"],
+      "after": ["y", "g", "v", "<Esc>"]
+    },
+
+    // map u to vim undo (ctrl r)
+    {
+      "before": ["U"],
+      "after": ["<C-r>"]
+    },
+
+    // Bind p in visual mode to paste without overriding the current register
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    },
+
+    // yank to and paste from non-default registry so that cut, delete doesn't override yanked items
+    {
+      "before": ["y"],
+      "after": ["\"", "h", "y"]
+    },
+    {
+      "before": ["Y"],
+      "after": ["\"", "h", "Y"]
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "h", "x"]
+    },
+    {
+      "before": ["X"],
+      "after": ["\"", "h", "X"]
+    },
+    {
+      "before": ["p"],
+      "after": ["\"", "h", "p"]
+    },
+    {
+      "before": ["P"],
+      "after": ["\"", "h", "P"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "*", "p"]
+    },
+    {
+      "before": ["<leader>", "P"],
+      "after": ["\"", "*", "P"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    // for time when there isn't autosave, may be sud bind :wa with j j too
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // map leader a to append at the end (A)
+    {
+      "before": ["<leader>", "a"],
+      "after": ["A"]
+    },
+    {
+      "before": ["<leader>", "v"],
+      "after": ["V"]
+    },
+    // remove highlight after inc search
+    {
+      "before": ["<leader>", "c"],
+      "commands": [":noh"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": [":wa"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "<leader>"],
+      "commands": [":toggleVim"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": [":x"]
+    },
+    // map find next/prev to leader n/N
+    {
+      "before": ["<leader>", "n"],
+      "after": ["*"]
+    },
+    {
+      "before": ["<leader>", "N"],
+      "after": ["#"]
+    },
+    // trigger easy motion with s command. dont need substitute
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "s"]
+    },
+
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    },
+
+    // map 'U' to redo. no need unmap ctrl + r because useCtrl is set to off
+    {
+      "before": ["U"],
+      "after": ["<C-r>"]
+    },
+
+    // go forward and backward in change list
+    {
+      "before": ["<leader>", "h"],
+      "after": ["g", ";"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["g", ","]
+    },
+    // this for some reason doesn't work
+    // {
+    //     "before": [ "<S-Enter>" ],
+    //     "after": ["O", "<Esc>"]
+    // },
+    {
+      "before": ["<Enter>"],
+      "after": ["o", "<Esc>"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["g", "d"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["g", "b"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["<C-o>"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["<C-i>"]
+    },
+
+    // yank to and paste from non-default registry so that cut, delete doesn't override yanked items
+    {
+      "before": ["y"],
+      "after": ["\"", "h", "y"]
+    },
+    {
+      "before": ["Y"],
+      "after": ["\"", "h", "Y"]
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "h", "x"]
+    },
+    {
+      "before": ["X"],
+      "after": ["\"", "h", "X"]
+    },
+    {
+      "before": ["p"],
+      "after": ["\"", "h", "p"]
+    },
+    {
+      "before": ["P"],
+      "after": ["\"", "h", "P"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "*", "p"]
+    },
+    {
+      "before": ["<leader>", "P"],
+      "after": ["\"", "*", "P"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "sync.gist": "57a4d334a9fb4a708bfb67f904309af1",
+  "sync.autoUpload": true,
+  "sync.autoDownload": true,
+  "files.autoSave": "afterDelay",
+  "extensions.ignoreRecommendations": true,
+  "html.format.extraLiners": "",
+  "[json, css, javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "update.showReleaseNotes": false,
+  "terminal.external.windowsExec": "C:\\Users\\anish\\scoop\\apps\\windows-terminal\\current\\WindowsTerminal.exe",
+  "workbench.startupEditor": "newUntitledFile",
+  "css.lint.boxModel": "warning",
+  "css.lint.compatibleVendorPrefixes": "warning",
+  "css.lint.duplicateProperties": "warning",
+  
+
+  "vscode-neovim.neovimExecutablePaths.win32": "C:\\Users\\anish\\scoop\\apps\\neovim-nightly\\current\\bin\\nvim.exe",
+  "vscode-neovim.neovimInitVimPaths.win32": "C:\\Users\\anish\\.config\\nvim\\init.vim",
+}
